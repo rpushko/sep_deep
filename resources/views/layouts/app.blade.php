@@ -39,9 +39,9 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
-                </a>
+                <h1><a class="navbar-brand" href="{{ url('/') }}">
+                        Laravel
+                    </a></h1>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -54,8 +54,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                        <li><a href="{{ url('/login') }}">{{trans('tasks.login')}}</a></li>
+                        <li><a href="{{ url('/register') }}">{{trans('tasks.register')}}</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

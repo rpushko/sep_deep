@@ -22,7 +22,8 @@
                     <!-- Заголовок таблицы -->
                     <thead>
                     <tr><th>Название</th>
-                        <th>Действие</th></tr>
+                        <th>Delete</th>
+                        <th>Edit</th></tr>
 
                     </thead>
 
@@ -41,6 +42,15 @@
                                     {{csrf_field()}}
                                     <button class="btn btn-danger">
                                         <i class="fa fa-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action ={{route('tasks.edit',$task->id)}}} method="post">
+                                    {{method_field('EDIT')}}
+                                    {{csrf_field()}}
+                                    <button class="btn btn-warning">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                     </button>
                                 </form>
                             </td>
