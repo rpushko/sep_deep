@@ -37,7 +37,7 @@
                             </td>
 
                             <td>
-                                <form action ={{route('tasks.destroy',$task->id)}}} method="post">
+                                <form action ="{{route('tasks.destroy',$task->id)}}" method="post">
                                     {{method_field('DELETE')}}
                                     {{csrf_field()}}
                                     <button class="btn btn-danger">
@@ -46,9 +46,9 @@
                                 </form>
                             </td>
                             <td>
-                                <form action ={{route('tasks.edit',$task->id)}}} method="post">
-                                    {{method_field('EDIT')}}
-                                    {{csrf_field()}}
+                                <form action ="{{route('tasks.edit',$task->id)}}" method="get">
+                                    {{method_field('GET')}}
+                                   {{csrf_field()}}
                                     <button class="btn btn-warning">
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                     </button>
