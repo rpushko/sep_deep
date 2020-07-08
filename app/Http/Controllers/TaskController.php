@@ -91,9 +91,9 @@ class TaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($tasks)
+    public function edit(Task $tasks)
     {
-        //
+        return view('tasks.edit',['tasks'=>$tasks]);
     }
 
     /**
@@ -103,9 +103,11 @@ class TaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Task $tasks)
     {
-        //
+        $tasks->name = $request->name;
+        $tasks->save();
+        return redirect(route('tasks.index'));
     }
 
     /**
